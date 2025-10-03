@@ -9,7 +9,6 @@ class CalculatorDivideByZeroError(Exception):
 
 class Calculator:
     def _check(self, a, b):
-        # Проверяем, что оба числа int или float (и не bool)
         if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
             raise CalculatorTypeError("Можно использовать только числа")
         if isinstance(a, bool) or isinstance(b, bool):
@@ -30,5 +29,5 @@ class Calculator:
     def divide(self, a, b):
         self._check(a, b)
         if b == 0:
-            raise CalculatorDivideByZeroError("Деление на ноль запрещено")
+            raise CalculatorDivideByZeroError("Деление на ноль")
         return a / b
